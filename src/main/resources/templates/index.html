@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <th:block th:replace="fragments :: link-styles" th:remove=""></th:block>
+</head>
+<body>
+<header th:replace="fragments :: navigator" th:remove="tag"></header>
+
+<div class="container">
+    <h1>Hello!</h1>
+    <!--<h1 th:text="${to-see}"></h1>-->
+
+
+</div>
+
+
+
+<div th:replace="fragments :: footer" th:remove="tag"></div>
+<div th:replace="fragments :: scripts" th:remove="tag"></div>
+</body>
+</html>

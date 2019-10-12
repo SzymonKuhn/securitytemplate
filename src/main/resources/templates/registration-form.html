@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <th:block th:replace="fragments :: link-styles" th:remove=""></th:block>
+</head>
+<body>
+<header th:replace="fragments :: navigator" th:remove="tag"></header>
+
+<div class="container">
+    <h1>Registration form</h1>
+    <form th:action="@{/user/register}" method="post" th:object="${newAccount}">
+
+        <div th:if="${errorMessage != null}" class="row col-md-12">
+            <div class="col-md-12" th:text="${errorMessage}"></div>
+        </div>
+
+
+
+        <div class="row col-12">
+            <div class="row col-12">
+                <div class="col-md-6">
+                    <label for="username">Username:</label>
+                </div>
+                <div class="col md-6">
+                    <input class="form-control" id="username" type="text" th:field="*{username}">
+                </div>
+            </div>
+
+            <div class="row col-12">
+                <div class="col-md-6">
+                    <label for="password">Password:</label>
+                </div>
+                <div class="col md-6">
+                    <input class="form-control" id="password" type="password" th:field="*{password}">
+                </div>
+            </div>
+
+            <div class="row col-12">
+                <div class="col-md-6">
+                    <label for="password">Confirm password:</label>
+                </div>
+                <div class="col md-6">
+                    <input class="form-control" id="password-confirm" type="password" th:name="passwordConfirm">
+                </div>
+            </div>
+
+
+            <div class="row col-12">
+                <div class="row col-6">
+                    <div class="offset-2 col-md-2">
+                        <button type="reset" class="btn btn-primary">Reset</button>
+                    </div>
+                </div>
+                <div class="col md-6">
+                    <div class="offset-2 col-md-2">
+                        <input type="submit" class="btn btn-primary">Submit</input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+
+</div>
+
+
+<div th:replace="fragments :: footer" th:remove="tag"></div>
+<div th:replace="fragments :: scripts" th:remove="tag"></div>
+</body>
+</html>
